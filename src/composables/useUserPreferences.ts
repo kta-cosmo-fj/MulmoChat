@@ -97,8 +97,9 @@ const resolveStoredModelKind = (
   stored: string | null,
 ): SessionTransportKind => {
   if (stored === "text-rest") return "text-rest";
-  if (stored === "voice-google-live") return "voice-google-live";
-  return "voice-realtime";
+  if (stored === "voice-realtime") return "voice-realtime";
+  // Default to Google Live API
+  return "voice-google-live";
 };
 
 // Migrate old imageGenerationBackend to new pluginConfigs
